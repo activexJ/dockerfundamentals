@@ -1,0 +1,16 @@
+version: '3.8'
+services: 
+    app:
+        image: arul434/dockerlearning:v1
+        ports: 
+            - 5000:5000
+        environment: 
+            REDIS_HOST: redis
+            REDIS_PORT: 6379
+        command: python app.py
+    redis:
+        image: redis:6.0.5-alpine
+
+# networks: 
+#     default:
+#         driver: overlay2
