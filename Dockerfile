@@ -5,4 +5,4 @@ COPY . .
 
 RUN pip install -r requirement.txt
 
-CMD [ "python", 'app.py' ]
+CMD [ "python", "app.py" ]
