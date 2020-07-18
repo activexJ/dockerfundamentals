@@ -1,0 +1,34 @@
+Steps:
+1. Build a container 
+    docker build -t <<IMAGE:TAGNAME>> .
+2. Push Image to Registry
+    docker push <<IMAGE:TAGNAME>>
+
+3. Run the image 
+    docker run -it -p <<hostport:container>> <<IMAGE:TAGNAME>> 
+create a container
+docker run -it -p 6379:6379 redis
+
+Docker-compose for multi container apps
+    1. create docker-compose.yml
+    2. docker-compose up will start the app with all services
+
+Docker Scaling
+    1. Docker swarm (one time procedure)
+        docker swarm init
+    2. docker stack deploy -c docker-compose.yml <<name>>
+    3. To List down all services
+        docker service ls
+    3. To Scale up/down
+        docker service <<servicename>>=count
+
+    To update a service
+    First way update docker-compose.yml and run docker stack deploy -c docker-compose.yml <<name>> 
+    Second way docker service update servicename image=
+
+i -interactive
+d - detach
+
+Best practices with docker  
+1. One service per container
+2. if crash let it

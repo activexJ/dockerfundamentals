@@ -17,3 +17,7 @@ Setup
 
 Docker compose 
 1. Run docker-compose up
+
+Scalable docker service
+
+docker service deploy -c docker-compose.yml <<APPNAME>>
